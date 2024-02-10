@@ -29,13 +29,14 @@ This project is a simple Student Management System implemented using Node.js and
 
 ## Usage
 
-1. Use Postman or any similar tool to interact with the API endpoints.
+1. Use Postman to interact with the API endpoints.
 2. Send HTTP requests to the appropriate endpoints for fetching, inserting, updating, or deleting student records.
 3. Ensure that request bodies are formatted correctly as JSON.
 
 ## Endpoints
 
 - **Fetch Data**: GET /fetch
+  ![image](https://github.com/nidakhanam/NodeJs_CRUD/assets/86373830/1f4f6caf-13d8-4f0b-9d9e-19b1e063a478)
 - **Insert Data**: POST /insert
 - **Update Data**: POST /update
 - **Delete Data**: POST /delete
