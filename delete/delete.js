@@ -6,11 +6,11 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/', (req, res) => {
-    var stu_name = req.body.stu_name;
+    var roll_number = req.body.roll_number;
 
     connection.query(
-        'DELETE FROM student WHERE stu_name = ?',
-        [stu_name],
+        'DELETE FROM student WHERE roll_number = ?',
+        [roll_number],
         (err, result) => {
             if (err) { 
                 res.send({"delete": "fail"});

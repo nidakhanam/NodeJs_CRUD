@@ -10,8 +10,9 @@ router.post('/',(req,res) => {
     var stu_name = req.body.stu_name;
     var stu_email = req.body.stu_email;
     var stu_no = req.body.stu_no;
+    var roll_number = req.body.roll_number;
 
-    connection.query('INSERT INTO student VALUES (?, ?, ?)', [stu_name, stu_email, stu_no], (err, result)=>{
+    connection.query('INSERT INTO student VALUES (?, ?, ?, ?)', [stu_name, stu_email, stu_no, roll_number], (err, result)=>{
         if(err){ 
             res.send({"insert":"fail"});
         }
