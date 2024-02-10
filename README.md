@@ -36,10 +36,18 @@ This project is a simple Student Management System implemented using Node.js and
 ## Endpoints
 
 - **Fetch Data**: GET /fetch
-  ![image](https://github.com/nidakhanam/NodeJs_CRUD/assets/86373830/1f4f6caf-13d8-4f0b-9d9e-19b1e063a478)
+  ![image](https://github.com/nidakhanam/NodeJs_CRUD/assets/86373830/9565cb2c-22bc-496d-972d-81b64d49558e)
+
 - **Insert Data**: POST /insert
+  ![image](https://github.com/nidakhanam/NodeJs_CRUD/assets/86373830/7ed1fa79-0097-400b-a6d3-7c757cac17cd)
+
 - **Update Data**: POST /update
+  ![image](https://github.com/nidakhanam/NodeJs_CRUD/assets/86373830/a7b9e0e4-add0-43c3-ab49-6bf8c6ccf628)
+
 - **Delete Data**: POST /delete
+  ![image](https://github.com/nidakhanam/NodeJs_CRUD/assets/86373830/6d84b084-074d-4de5-9403-998d0c930cca)
+
+  
 
 ## Dependencies
 
