@@ -13,9 +13,8 @@ This project is a simple Student Management System implemented using Node.js and
 ## Setup
 
 1. Clone the repository:
-
-
-
+        git clone https://github.com/nidakhanam/NodeJs_CRUD.git
+   
 2. Install dependencies:
         npm install
 
