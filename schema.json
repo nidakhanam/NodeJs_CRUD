@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+      "roll_number": { "type": "integer" },
+      "stu_name": { "type": "string" },
+      "stu_email": { "type": "string", "format": "email" },
+      "stu_no": { "type": ["integer", "null"] }
+    },
+    "required": ["roll_number", "stu_name", "stu_email"]
+}
