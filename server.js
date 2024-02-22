@@ -1,24 +1,34 @@
-var exp = require('express');
-var bodyparser = require('body-parser');
-var cors = require('cors');
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
 
-var app = exp();
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended:false}));
-
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-var fetch = require('./fetchdata/fetch');
-app.use('/fetch',fetch);
+const loginRouter = require('./routes/login');
+app.use('/login', loginRouter);
 
-var insert = require('./insert/insert');
-app.use('/insert',insert);
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (token == null) return res.sendStatus(401);
 
-var update = require('./updatedb/update');
-app.use('/update',update);
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+}
 
-var deleteRouter = require('./delete/delete');
-app.use('/delete',deleteRouter);
+app.use('/fetch', authenticateToken, require('./fetchdata/fetch'));
+app.use('/insert', authenticateToken, require('./insert/insert'));
+app.use('/update', authenticateToken, require('./updatedb/update'));
+app.use('/delete', authenticateToken, require('./delete/delete'));
 
-app.listen(8080);
-console.log('Server listening on port Number 8080');
+app.listen(8080, () => {
+  console.log('Server listening on port 8080');
+});
