@@ -17,7 +17,6 @@ const schema = {
 var router = express.Router();
 
 router.post('/', (req, res) => {
-  // Validate the request body against the JSON schema
   const isValid = ajv.validate(schema, req.body);
   if (!isValid) {
     return res.status(400).json({ error: ajv.errors });

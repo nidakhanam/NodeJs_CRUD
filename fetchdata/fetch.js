@@ -5,8 +5,8 @@ var express = require('express');
 
 var router = express.Router();
 
-router.get('/',(req,res)=> {
-    connection.query('select * from student',(err,array,feilds)=>{
+router.get('/', (req, res) => {
+    connection.query('SELECT roll_number, stu_name, stu_email, stu_no FROM student', (err, array, fields) => {
         res.send(array);
     });
 });

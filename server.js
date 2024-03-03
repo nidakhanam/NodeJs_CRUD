@@ -23,7 +23,7 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
-
+app.use('/upload', authenticateToken, require('./routes/upload')); 
 app.use('/fetch', authenticateToken, require('./fetchdata/fetch'));
 app.use('/insert', authenticateToken, require('./insert/insert'));
 app.use('/update', authenticateToken, require('./updatedb/update'));
